@@ -128,8 +128,11 @@ header h1 {
 
 /* Media container — fixed-height box.
    For IMAGE cards, the image is set as background-image inline in the HTML.
-   background-size: cover  scales it to fill the box without distortion.
-   background-position: center  shows the middle of the image.
+   background-size options:
+     cover   — fills the box, crops edges (good for photos)
+     contain — shows whole image, may leave gaps at sides (good for diagrams)
+   background-position: center shows the middle; try "top" or "top center"
+   if the important part of your image is at the top.
    For IFRAME cards, the iframe is absolutely positioned to fill the box.
    Change height here to make all card media taller or shorter. */
 .card-media {
@@ -137,10 +140,10 @@ header h1 {
   height: 200px;
   overflow: hidden;
   position: relative;
-  background-size: cover;
-  background-position: center;
+  background-size: 100% auto;       /* scales to full card width; height is proportional */
+  background-position: top center;  /* anchors to top so bottom clips if image is tall */
   background-repeat: no-repeat;
-  background-color: #333;     /* fallback color if image hasn't loaded */
+  background-color: #f8f8f8;        /* matches card background when image doesn't fill box */
 }
 
 /* YouTube iframes — fill the container exactly. */
