@@ -140,8 +140,8 @@ header h1 {
   height: 200px;
   overflow: hidden;
   position: relative;
-  background-size: 100% auto;       /* scales to full card width; height is proportional */
-  background-position: top center;  /* anchors to top so bottom clips if image is tall */
+  background-size: 100% auto;       /* default — overridden per-image in the HTML */
+  background-position: top left;    /* default — overridden per-image in the HTML */
   background-repeat: no-repeat;
   background-color: #f8f8f8;        /* matches card background when image doesn't fill box */
 }
