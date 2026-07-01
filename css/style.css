@@ -1,0 +1,256 @@
+/*
+ * style.css — Brock Williams personal website
+ *
+ * COLOR PALETTE (change these to restyle the whole page):
+ *
+ *   #CC0000   TTU Red (Pantone 485 C / PMS 186 C) — official Texas Tech red
+ *   #000000   TTU Black — top header bar, copyright bar
+ *   #ffffff   white     — text on dark backgrounds
+ *   #f8f8f8   off-white — card backgrounds
+ *   #252323   near-black — card body text
+ *
+ * FONT:
+ *   Verdana / sans-serif stack — same as the original page.
+ *   Change the font-family in the body rule below to use a different font.
+ */
+
+
+/* =============================================
+   RESET & BASE
+   Sets sensible defaults for all elements.
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;   /* padding doesn't add to width — much saner */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #252323;
+  line-height: 1.6;
+}
+
+
+/* =============================================
+   OUTER WRAPPER
+   Centers the page content and caps its width.
+   Increase max-width for a wider layout.
+   ============================================= */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =============================================
+   HEADER — black bar with your name
+   ============================================= */
+
+header {
+  background-color: #000000;
+  padding: 18px 0;
+  text-align: center;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+
+/* =============================================
+   INTRO SECTION — dark red band, two columns
+   Left:  photo
+   Right: personal statement (white text)
+   ============================================= */
+
+.intro {
+  background-color: #CC0000;
+  display: flex;              /* side-by-side columns */
+  align-items: center;        /* vertically centered */
+  gap: 30px;
+  padding: 35px 40px;
+}
+
+.intro-photo {
+  flex: 0 0 auto;             /* photo column doesn't stretch */
+}
+
+.intro-photo img {
+  width: 220px;
+  height: auto;
+  display: block;
+}
+
+.intro-text {
+  flex: 1;                    /* text column fills remaining space */
+}
+
+.intro-text p {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* =============================================
+   GALLERY — four equal-width cards
+   Add or remove .card divs in the HTML to
+   change the number of columns.
+   ============================================= */
+
+.gallery {
+  display: flex;              /* cards sit side by side */
+  flex-wrap: wrap;            /* wrap to new row on small screens */
+  gap: 20px;
+  padding: 30px 0;
+  background-color: #ffffff;
+}
+
+.card {
+  flex: 1 1 200px;            /* each card is at least 200px wide */
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  border-bottom: 4px solid #CC0000;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Media container — fixed-height box that clips its contents.
+   overflow: hidden is what does the clipping.
+   position: relative is required for the absolute children below.
+   Change height to make all card media taller or shorter. */
+.card-media {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Images — positioned to fill the container and crop to fit.
+   This is more reliable than object-fit alone across browsers. */
+.card-media img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.85;
+}
+
+/* YouTube iframes — fill the container exactly. */
+.card-media iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Card headings — red, left-aligned */
+.card h2 {
+  color: #CC0000;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+/* Card body text */
+.card p {
+  color: #252323;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Links inside cards */
+.card a {
+  color: #CC0000;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+
+/* =============================================
+   FOOTER — dark red band
+   ============================================= */
+
+footer {
+  background-color: #CC0000;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+
+/* =============================================
+   COPYRIGHT BAR — black bar at the bottom
+   ============================================= */
+
+.copyright {
+  background-color: #000000;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.copyright p {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+/* =============================================
+   RESPONSIVE — small tablets and phones
+   Below 700px, cards stack vertically and
+   the intro section stacks photo over text.
+   ============================================= */
+
+@media (max-width: 700px) {
+
+  .intro {
+    flex-direction: column;   /* stack photo above text */
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .intro-photo img {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .card {
+    flex: 1 1 100%;           /* each card takes full width */
+  }
+
+}

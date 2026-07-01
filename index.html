@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- =============================================
+       TITLE — appears in browser tab
+       ============================================= -->
+  <title>Brock Williams</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- =============================================
+     OUTER WRAPPER
+     Centers everything and sets max width.
+     You shouldn't need to touch this.
+     ============================================= -->
+<div class="container">
+
+
+  <!-- =============================================
+       HEADER BAR — black bar at the top
+       Change the name text here if needed.
+       ============================================= -->
+  <header>
+    <h1>G. Brock Williams</h1>
+  </header>
+
+
+  <!-- =============================================
+       INTRO SECTION — dark red band
+       Left column:  your photo
+       Right column: your personal statement
+
+       To change the photo, replace williams.jpeg
+       in the images/ folder and update the
+       src attribute below.
+       ============================================= -->
+  <section class="intro">
+
+    <div class="intro-photo">
+      <img src="images/williams.jpeg" alt="Brock Williams">
+    </div>
+
+    <div class="intro-text">
+      <p>I believe my research is a journey of discovery hand-in-hand with
+      God.  The greatest joy in my work comes when I am most consciously
+      connected to His goals for my life and when I lean most completely on
+      Him.  I don't mean praying for the answer to a problem (though there
+      is some of that), but that in the beauty of mathematics, I can see the
+      work of God.  In my teaching, I try to serve others using Jesus as my
+      model.  This is my calling.</p>
+    </div>
+
+  </section>
+
+
+  <!-- =============================================
+       FOUR-COLUMN GALLERY
+       Each .card is one column.
+       The four cards are: Research, Teaching,
+       Service, Grants.
+
+       Each card has:
+         - a media element (iframe or img)
+         - an <h2> heading
+         - a <p> description
+
+       YouTube embed IDs:
+         Research: f7GZWyoRQxI
+         Teaching: 1viZZmFGYh0
+       To change a video, replace the ID in the
+       src URL, e.g.:
+         https://www.youtube.com/embed/YOUR_ID
+       ============================================= -->
+  <div class="gallery">
+
+
+    <!-- RESEARCH CARD -->
+    <div class="card">
+      <div class="card-media">
+        <iframe
+          src="https://www.youtube.com/embed/f7GZWyoRQxI"
+          title="Research Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h2>Research</h2>
+      <p>My primary research interest is conformal and quasiconformal
+      deformations of surfaces, especially using circle packings to study
+      the interplay between geometry, analysis, and probability in
+      determining their properties.</p>
+    </div>
+
+
+    <!-- TEACHING CARD -->
+    <div class="card">
+      <div class="card-media">
+        <iframe
+          src="https://www.youtube.com/embed/1viZZmFGYh0"
+          title="Teaching Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h2>Teaching</h2>
+      <p>I enjoy teaching a wide variety of courses from Calculus to
+      graduate Complex Analysis.  Lately, I've also developed several
+      online math courses.  Teaching online presents special challenges,
+      but it's important to reach students where they are.</p>
+    </div>
+
+
+    <!-- SERVICE CARD -->
+    <div class="card">
+      <div class="card-media">
+        <img src="images/image_2.jpg" alt="A Discrete Conformal Welding">
+      </div>
+      <h2>Service</h2>
+      <p>Among other things, I serve as our department's Associate Chair
+      for Undergraduate Studies and Assessment and as a member of the
+      <a href="https://www.depts.ttu.edu/math/himta">Helen I. Medley
+      Teaching Award</a> Committee.</p>
+    </div>
+
+
+    <!-- GRANTS CARD -->
+    <div class="card">
+      <div class="card-media">
+        <img src="images/SchoenbergZ.png" alt="Circle packing image">
+      </div>
+      <h2>Grants</h2>
+      <p>I have served as PI or co-PI on grants from the National Science
+      Foundation, the US Dept of Education, the Texas Education
+      Administration, the NVIDIA Corporation, and the Greater Texas
+      Foundation with budgets totaling over $12.1 million.</p>
+    </div>
+
+
+  </div>
+  <!-- end .gallery -->
+
+
+  <!-- =============================================
+       FOOTER — dark red band
+       Change department name / affiliation here.
+       ============================================= -->
+  <footer>
+    <p>Department of Mathematics and Statistics</p>
+  </footer>
+
+
+  <!-- =============================================
+       COPYRIGHT BAR — black bar at the bottom
+       ============================================= -->
+  <div class="copyright">
+    <p>Texas Tech University</p>
+  </div>
+
+
+</div>
+<!-- end .container -->
+
+</body>
+</html>
