@@ -126,29 +126,21 @@ header h1 {
   text-align: center;
 }
 
-/* Media container — fixed-height box that clips its contents.
-   overflow: hidden is what does the clipping.
-   position: relative is required for the absolute children below.
-   Change height to make all card media taller or shorter. */
+/* Media container — fixed-height box.
+   For IMAGE cards, the image is set as background-image inline in the HTML.
+   background-size: cover  scales it to fill the box without distortion.
+   background-position: center  shows the middle of the image.
+   For IFRAME cards, the iframe is absolutely positioned to fill the box.
+   Change height here to make all card media taller or shorter. */
 .card-media {
   width: 100%;
   height: 200px;
   overflow: hidden;
   position: relative;
-}
-
-/* Images — positioned to fill the container and crop to fit.
-   This is more reliable than object-fit alone across browsers. */
-.card-media img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0.85;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #333;     /* fallback color if image hasn't loaded */
 }
 
 /* YouTube iframes — fill the container exactly. */
